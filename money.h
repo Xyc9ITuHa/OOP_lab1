@@ -12,7 +12,7 @@
 inline struct MoneyStruct {
     int grn;
     short int kop;
-} singleProductOld, singleProductNew;
+} singleProductOld, singleProductNew, sumNoRounding;
 
 void moneyMultiply(MoneyStruct& p, int amount);
 void moneyAdd(MoneyStruct& target, MoneyStruct& source);

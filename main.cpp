@@ -6,7 +6,6 @@
 
 using namespace std;
 int main() {
-    int linesCount = 0;
     string line;
     ifstream inputFile("data.txt");
     if (!inputFile.is_open()) {
@@ -35,15 +34,17 @@ int main() {
         ss >> singleProductNew.kop;
         ss >> temp;
 
-        moneyRound(singleProductNew);
         cout << singleProductNew.grn << " grn " << singleProductNew.kop << " kop"<< ", ";
         //amount
         ss >> amount;
         ss >> temp;
         cout << amount << " " << temp << endl;
         moneyMultiply(singleProductNew, amount);
-        moneyAdd(singleProductOld, singleProductNew);
+        moneyAdd(sumNoRounding, singleProductNew);
     }
-    cout << "\t total sum is: " << singleProductOld.grn << " grn " << singleProductOld.kop << " kop " << endl;
+    cout << "\t total sum without rounding is: " << sumNoRounding.grn << " grn " << sumNoRounding.kop << " kop " << endl;
+    moneyRound(sumNoRounding);
+    cout << "\t total sum with rounding is: " << sumNoRounding.grn << " grn " << sumNoRounding.kop << " kop " << endl;
+
     return 0;
 }

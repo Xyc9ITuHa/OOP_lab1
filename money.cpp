@@ -13,6 +13,7 @@ void moneyAdd(MoneyStruct &target, MoneyStruct &source) {
     }
     target.grn += source.grn;
     target.kop += source.kop;
+
     if (target.kop >= 100) {
         target.grn += target.kop / 100;
         target.kop %= 100;
@@ -37,7 +38,7 @@ void readFile(MoneyStruct& target, std::string fileName) {
     int linesCount = 0;
     std::ifstream file(fileName);
     if (!file.is_open()) {
-        std::cout << "error occured sorry lol :P";
+        std::cout << "error occurred sorry lol :P";
     }
     while (std::getline(file, line)) {
         linesCount++;
